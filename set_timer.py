@@ -11,7 +11,7 @@ if __name__ == '__main__':
         #現状クーラーオンのみなので、選択できるようにすること
         hour = argv[1]
         minute=argv[2]
-        crontab_setting=minute+" "+hour+" * * * python send_ir.py cooler_on_25.txt\n"
+        crontab_setting=minute+" "+hour+" * * * python3 send_ir.py cooler_on_25.txt\n"
         #crontab設定ファイル書き換え
         with open(crontab_setting_file, 'w') as f:
             f.write(crontab_setting)
