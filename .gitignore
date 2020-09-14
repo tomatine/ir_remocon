@@ -1,3 +1,4 @@
 .vscode
 crontab-data
 *test*
+*cache*
