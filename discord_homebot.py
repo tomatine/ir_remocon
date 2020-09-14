@@ -28,7 +28,8 @@ async def on_message(message):
     
     if message.content == 'ヘルプ':
         help_message='冷房オン：25度で冷房をつけます\n暖房オン：暖房をつけます\nエアコンオフ：エアコンを止めます\n'
-        await message.channel.send(help_message)
+        e = discord.Embed(title='ヘルプ',description=help_message,colour=0x206694)#colourをランダムで選べるようにしたい
+        await message.channel.send(embed=e)
 
     if message.content == '/neko':
         await message.channel.send('nyan')
