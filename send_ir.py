@@ -14,7 +14,6 @@ if __name__ == '__main__':
             f = open(filename, 'r')
             code = f.read()
             send(code)
-            os.system("crontab -r")#crontabリセット
             sys.exit(0)
         else:
            sys.stderr.write('File not found.\n')
