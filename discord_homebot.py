@@ -27,7 +27,13 @@ async def on_message(message):
         return
     
     if message.content == 'ヘルプ':
-        help_message='冷房オン：25度で冷房をつけます\n暖房オン：暖房をつけます\nエアコンオフ：エアコンを止めます\n'
+        help_message = '冷房オン---25度で冷房をつけます\n\
+暖房オン---暖房をつけます\n\
+エアコンオフ---エアコンを止めます\n\
+冷房タイマー22:30---22:30に冷房をつけます\n\
+暖房タイマー22:30---22:30に暖房をつけます\n\
+オフタイマー22:30---22:30にエアコンを止めます\n\
+'
         e = discord.Embed(title='ヘルプ',description=help_message,colour=0x206694)#colourをランダムで選べるようにしたい
         await message.channel.send(embed=e)
 
@@ -47,5 +53,8 @@ async def on_message(message):
         send(code)
         await message.channel.send('エアコンを止めました！')
 
+    if message.content.startswith('冷房タイマー'):
+        
+        await message.channel.send('{0}:{1}にタイマーをセットしました！'.format(hour,minute))
 
 client.run(os.environ.get("discord_homebot_token"))
