@@ -3,13 +3,23 @@
 
 import discord
 import os
+import logging
 from send_ir import fetch_code, send
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s:%(message)s'))
+logger.addHandler(handler)
+
 
 client=discord.Client()
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+    game = discord.Game('\'ヘルプ\'と入力するとコマンド一覧を表示します')
+    await client.change_presence(activity=game)
 
 @client.event
 async def on_message(message):
@@ -17,7 +27,7 @@ async def on_message(message):
         return
     
     if message.content == 'ヘルプ':
-        help_message='\n冷房オン：25度で冷房をつけます\n暖房オン：暖房をつけます\nエアコンオフ：エアコンを止めます\n'
+        help_message='冷房オン：25度で冷房をつけます\n暖房オン：暖房をつけます\nエアコンオフ：エアコンを止めます\n'
         await message.channel.send(help_message)
 
     if message.content == '/neko':

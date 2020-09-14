@@ -2,3 +2,4 @@
 crontab-data
 *test*
 *cache*
+*.log
