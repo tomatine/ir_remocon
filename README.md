@@ -1,9 +1,9 @@
 
 # ir_remocon
 raspberry piとBit Trade One社製の[USB赤外線リモコンアドバンス](https://bit-trade-one.co.jp/product/module/adir01p/)を使い、discordから家電を遠隔操作するためのコードです。
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">よっしゃ <a href="https://t.co/gkRBkPILc9">pic.twitter.com/gkRBkPILc9</a></p>&mdash; とまちん (@tomatine86) <a href="https://twitter.com/tomatine86/status/1305607212094484480?ref_src=twsrc%5Etfw">September 14, 2020</a></blockquote>
+
 IFTTTを使ってgooglehomeとdiscordを連携させることで音声操作もできます
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">音声でもいける <a href="https://t.co/jBoDFgIgdS">pic.twitter.com/jBoDFgIgdS</a></p>&mdash; とまちん (@tomatine86) <a href="https://twitter.com/tomatine86/status/1305607815319363585?ref_src=twsrc%5Etfw">September 14, 2020</a></blockquote>
+
 
 ## Dependency
 - python3.8+
